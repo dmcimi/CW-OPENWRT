@@ -76,7 +76,7 @@ jobs:
       - name: Make Config
         run: |
           cd openwrt
-          rm ./.config
+          #rm ./.config
           wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/app_config_mt300nv2.seed -O ./.config
           cat >> ./.config <<EOF
           CONFIG_TARGET_ramips=y
