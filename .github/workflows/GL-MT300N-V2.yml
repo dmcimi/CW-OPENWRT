@@ -52,7 +52,7 @@ jobs:
           expire-in: 7days # Setting this to 0 will delete all artifacts
       - name: Prepare Mixedwrt
         run: |
-          sudo chown -R runner:runner /home/runner/work/Q
+          sudo chown -R runner:runner /home/runner/work/CW-OPENWRT
           cp -r ./SCRIPTS/. ./
           /bin/bash 01_get_ready.sh
       - name: Prepare Package
