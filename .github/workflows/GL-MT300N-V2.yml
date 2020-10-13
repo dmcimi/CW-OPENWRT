@@ -4,8 +4,8 @@ on:
   push:
     branches: 
       - master
-    paths:
-      - '.github/workflows/GL-MT300N-V2.yml'
+    #paths:
+      #- '.github/workflows/GL-MT300N-V2.yml'
   schedule:
     - cron: 5 1 * * 0
   watch:
