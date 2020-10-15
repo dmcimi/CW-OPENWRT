@@ -4,6 +4,13 @@ clear
 #更新feed
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
+#更换GCC版本
+rm -rf ./feeds/packages/devel/gcc
+svn co https://github.com/openwrt/packages/trunk/devel/gcc feeds/packages/devel/gcc
+#更换Golang版本
+rm -rf ./feeds/packages/lang/golang
+svn co https://github.com/openwrt/packages/trunk/lang/golang feeds/packages/lang/golang
+
 ##获取额外package
 #SSRP
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/lean/luci-app-ssr-plus
