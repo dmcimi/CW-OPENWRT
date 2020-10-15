@@ -35,6 +35,9 @@ svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/lean/naivepr
 
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/upx tools/upx
 svn co https://github.com/coolsnowwolf/lede/trunk/tools/ucl tools/ucl
+wget https://github.com/upx/upx/releases/download/v3.96/upx-3.96-amd64_linux.tar.xz
+tar -xvJf upx-3.96-amd64_linux.tar.xz
+cp ./upx-3.96-amd64_linux/upx ./staging_dir/host/bin/
 
 # Zerotier
 svn co https://github.com/project-openwrt/openwrt/branches/master/package/lean/luci-app-zerotier package/lean/luci-app-zerotier
