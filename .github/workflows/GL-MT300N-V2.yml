@@ -112,8 +112,8 @@ jobs:
           cp openwrt/bin/targets/ramips/mt76x8/*.bin ./artifact/
           release_tag="GL-MT300N-V2-$(date +%Y-%m-%d)"
           echo "##[set-output name=release_tag;]$release_tag"
-           - name: Upload Artifact
-      - uses: actions/upload-artifact@master
+      - name: Upload Artifact
+        uses: actions/upload-artifact@master
         with:
           name: ${{ steps.assemble_artifact.outputs.release_tag }}-ROM
           path: ./artifact/
