@@ -77,7 +77,7 @@ jobs:
         run: |
           cd openwrt
           #rm ./.config
-          wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/app_config_mt300nv2.seed -O ./.config
+          wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/16M_WiFi.seed -O ./.config
           cat >> ./.config <<EOF
           CONFIG_TARGET_ramips=y
           CONFIG_TARGET_ramips_mt76x8=y
