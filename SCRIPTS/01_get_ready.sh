@@ -1,6 +1,6 @@
 #!/bin/bash
 git clone -b master https://git.openwrt.org/openwrt/openwrt.git openwrt
 cd openwrt
-git reset --hard d5810aa61367a9424599935572f622d27f8303f0
+git reset --hard c37eb9a9f9d43aa3231a607387754479886edf0d
 
 exit 0
