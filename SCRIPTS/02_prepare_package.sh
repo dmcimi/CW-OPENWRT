@@ -37,6 +37,7 @@ svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ipt2socks package
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/simple-obfs package/lean/simple-obfs
 svn co https://github.com/coolsnowwolf/packages/trunk/net/shadowsocks-libev package/lean/shadowsocks-libev
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/trojan package/lean/trojan
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/xray package/lean/xray
 svn co https://github.com/fw876/helloworld/trunk/naiveproxy package/lean/naiveproxy
 
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk/v2ray package/new/v2ray
