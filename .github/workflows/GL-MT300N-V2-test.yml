@@ -41,10 +41,11 @@ jobs:
           sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /usr/local/lib/android /opt/ghc /swapfile
       - name: Clone Source
         run: |
-          cd "/home/runner"
+          #cd "/home/runner"
           git clone --branch "master" --single-branch "https://github.com/project-openwrt/openwrt" "openwrt"
           sudo chown -R runner:runner "openwrt"
-          cd /home/runner/openwrt
+          #cd /home/runner/openwrt
+          cd openwrt
           ./scripts/feeds update -a
           ./scripts/feeds install -a
       
