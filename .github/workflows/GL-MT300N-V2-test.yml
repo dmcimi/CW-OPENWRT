@@ -85,7 +85,7 @@ jobs:
         run: |
           df -h
           cd openwrt
-          make -j$[$(nproc)+1]
+          make -j$[$(nproc)+1] V=s
       - name: Print Disk Space After
         run: df -h
       - name: Assemble Artifact
