@@ -69,7 +69,11 @@ jobs:
         run: |
           cd openwrt
           #rm ./.config
-          wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/16M_WiFi.seed -O ./.config
+          wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/1_common.seed -O ./.config
+          wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/2_16_128_ssrp.seed -O ./2_16_128_ssrp.seed
+          
+          cat ./2_16_128_ssrp.seed >> ./.config
+          
           cat >> ./.config <<EOF
           CONFIG_TARGET_ramips=y
           CONFIG_TARGET_ramips_mt76x8=y
