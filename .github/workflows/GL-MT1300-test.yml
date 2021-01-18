@@ -93,7 +93,7 @@ jobs:
           df -h
           cd openwrt
           #make -j$[$(nproc)+1] V=s
-          make V=s
+          make -j5 V=s
       - name: Print Disk Space After
         run: df -h
       - name: Assemble Artifact
@@ -101,7 +101,7 @@ jobs:
         run: |
           rm -rf ./artifact/
           mkdir -p ./artifact/
-          cp openwrt/bin/targets/ramips/mt7621/*.bin ./artifact/
+          cp openwrt/bin/targets/ramips/mt7621/*sysupgrade.bin ./artifact/
           release_tag="GL-MT1300-test-$(date +%Y-%m-%d)"
           echo "##[set-output name=release_tag;]$release_tag"
       - name: Upload Artifact
