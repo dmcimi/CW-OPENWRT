@@ -98,7 +98,7 @@ jobs:
         run: |
           rm -rf ./artifact/
           mkdir -p ./artifact/
-          cp openwrt/bin/targets/ramips/mt76x8/*.bin ./artifact/
+          cp openwrt/bin/targets/ramips/mt76x8/*-sysupgrade.bin ./artifact/
           release_tag="GL-MT300N-V2-test-$(date +%Y-%m-%d)"
           echo "##[set-output name=release_tag;]$release_tag"
       - name: Upload Artifact
