@@ -82,6 +82,7 @@ jobs:
           CONFIG_TARGET_ramips=y
           CONFIG_TARGET_ramips_mt76x8=y
           CONFIG_TARGET_ramips_mt76x8_DEVICE_gl-mt300n-v2=y
+          CONFIG_PACKAGE_kmod-rtl8192eu=y
           EOF
           make defconfig
       - name: Make Download
