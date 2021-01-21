@@ -42,8 +42,8 @@ jobs:
       - name: Clone Source
         run: |
           #cd "/home/runner"
-          git clone --branch "openwrt-19.07" --single-branch "https://github.com/project-openwrt/openwrt" "openwrt"
-          git clone "https://github.com/CWZ7605/rtl8192eu_for_openwrt_19.07" "rtl"
+          git clone --branch "master" --single-branch "https://github.com/project-openwrt/openwrt" "openwrt"
+          git clone "https://github.com/CWZ7605/rtl8192eu_for_openwrt" "rtl"
           cp -r ./rtl/rtl8192eu ./openwrt/package/kernel/rtl8192eu
           sudo chown -R runner:runner "openwrt"
           #cd /home/runner/openwrt
