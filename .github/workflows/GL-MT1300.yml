@@ -1,11 +1,11 @@
-name: GL-MT300N-V2-test
+name: GL-MT1300
  
 on:
   push:
     branches: 
       - main
     paths:
-      - '.github/workflows/GL-MT300N-V2-test.yml'
+      - '.github/workflows/GL-MT1300.yml'
   schedule:
     - cron: 5 1 * * 0
   watch:
@@ -14,15 +14,13 @@ on:
     
 jobs:
   build:
-  
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@main
         with:
           ref: main
-          
+
       - name: Init build dependencies
         env:
           DEBIAN_FRONTEND: noninteractive
@@ -41,10 +39,8 @@ jobs:
           sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /usr/local/lib/android /opt/ghc /swapfile
       - name: Clone Source
         run: |
-          #cd "/home/runner"
           git clone --branch "master" --single-branch "https://github.com/project-openwrt/openwrt" "openwrt"
           sudo chown -R runner:runner "openwrt"
-          #cd /home/runner/openwrt
           cd openwrt
           ./scripts/feeds update -a
           ./scripts/feeds install -a
@@ -69,15 +65,18 @@ jobs:
         run: |
           cd openwrt
           #rm ./.config
+          
           wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/1_common.seed -O ./.config
-          wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/2_16_128_ssrp.seed -O ./2_16_128_ssrp.seed
+          wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/2_32_256.seed -O ./2_32_256.seed
+          wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/4_with_turbo_acc_full.seed  -O ./4_with_turbo_acc_full.seed
           
-          cat ./2_16_128_ssrp.seed >> ./.config
-          
+          cat ./2_32_256.seed >> ./.config
+          cat ./4_with_turbo_acc_full.seed >> ./.config
+
           cat >> ./.config <<EOF
           CONFIG_TARGET_ramips=y
-          CONFIG_TARGET_ramips_mt76x8=y
-          CONFIG_TARGET_ramips_mt76x8_DEVICE_glinet_gl-mt300n-v2=y
+          CONFIG_TARGET_ramips_mt7621=y
+          CONFIG_TARGET_ramips_mt7621_DEVICE_glinet_gl-mt1300=y
           EOF
           make defconfig
       - name: Make Download
@@ -100,8 +99,8 @@ jobs:
         run: |
           rm -rf ./artifact/
           mkdir -p ./artifact/
-          cp openwrt/bin/targets/ramips/mt76x8/*sysupgrade.bin ./artifact/
-          release_tag="GL-MT300N-V2-test-$(date +%Y-%m-%d)"
+          cp openwrt/bin/targets/ramips/mt7621/*sysupgrade.bin ./artifact/
+          release_tag="GL-MT1300-$(date +%Y-%m-%d)"
           echo "##[set-output name=release_tag;]$release_tag"
       - name: Upload Artifact
         uses: actions/upload-artifact@master
