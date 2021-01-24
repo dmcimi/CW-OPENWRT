@@ -357,7 +357,7 @@ jobs:
           cat >> ./.config <<EOF
           CONFIG_TARGET_ath79=y
           CONFIG_TARGET_ath79_generic=y
-          CONFIG_TARGET_ath79_generic_DEVICE_gl-ar300m-lite=y
+          CONFIG_TARGET_ath79_generic_DEVICE_glinet_gl-ar300m-lite=y
           EOF
           make defconfig
       - name: Make Download

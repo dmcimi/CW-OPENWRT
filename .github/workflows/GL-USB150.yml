@@ -75,7 +75,7 @@ jobs:
           cat >> ./.config <<EOF
           CONFIG_TARGET_ath79=y
           CONFIG_TARGET_ath79_generic=y
-          CONFIG_TARGET_ath79_generic_DEVICE_gl-usb150=y
+          CONFIG_TARGET_ath79_generic_DEVICE_glinet_gl-usb150=y
           EOF
           make defconfig
       - name: Make Download
