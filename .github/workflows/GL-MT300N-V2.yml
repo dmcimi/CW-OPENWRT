@@ -70,7 +70,7 @@ jobs:
           wget https://github.com/CWZ7605/CheeseSth/raw/master/CheeseWrt/.config/4_without_turbo_acc.seed -O ./4_without_turbo_acc.seed
           
           cat ./2_16_128.seed >> ./.config
-          cat ./4_without_turbo_acc.seed >> ./.config
+          #cat ./4_without_turbo_acc.seed >> ./.config
           
           cat >> ./.config <<EOF
           CONFIG_TARGET_ramips=y
