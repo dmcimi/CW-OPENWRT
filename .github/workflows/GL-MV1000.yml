@@ -1,11 +1,11 @@
-name: GL-MV1000W-test
+name: GL-MV1000
  
 on:
   push:
     branches: 
       - main
     paths:
-      - '.github/workflows/GL-MV1000W-test.yml'
+      - '.github/workflows/GL-MV1000.yml'
   schedule:
     - cron: 5 1 * * 0
   watch:
