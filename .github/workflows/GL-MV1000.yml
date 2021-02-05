@@ -99,7 +99,7 @@ jobs:
         run: |
           rm -rf ./artifact/
           mkdir -p ./artifact/
-          cp openwrt/bin/targets/mvebu/cortexa53/*sysupgrade.img ./artifact/
+          cp openwrt/bin/targets/mvebu/cortexa53/*.img.gz ./artifact/
           release_tag="GL-MV1000-$(date +%Y-%m-%d)"
           echo "##[set-output name=release_tag;]$release_tag"
       - name: Upload Artifact
