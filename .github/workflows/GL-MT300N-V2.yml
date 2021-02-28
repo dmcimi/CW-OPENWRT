@@ -39,7 +39,7 @@ jobs:
           sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /usr/local/lib/android /opt/ghc /swapfile
       - name: Clone Source
         run: |
-          git clone --branch "master" --single-branch "https://github.com/project-openwrt/openwrt" "openwrt"
+          git clone --branch "master" --single-branch "https://github.com/immortalwrt/immortalwrt" "openwrt"
           sudo chown -R runner:runner "openwrt"
           cd openwrt
           ./scripts/feeds update -a
